@@ -74,10 +74,11 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
     ArrayList<Genre> items = new ArrayList<>();
 
     String[] title = resources.getStringArray(R.array.techno_array);
-    String[] urmImage = resources.getStringArray(R.array.techno_image_array);
+    String[] urlImage = resources.getStringArray(R.array.techno_image_array);
+    String[] details = resources.getStringArray(R.array.techno_array_details);
 
     for (int i = 0; i < title.length; i++) {
-      items.add(new Genre(title[i], urmImage[i]));
+      items.add(new Genre(title[i], urlImage[i], details[i]));
     }
     return items;
   }

@@ -11,18 +11,24 @@ public class Genre implements Renderable {
 
   public static final String TAG = "Genre";
 
-  public static final String IMAGE = "image";
   public static final String TITLE = "title";
+  public static final String IMAGE = "image";
+  public static final String DETAILS = "details";
 
-  @ParcelProperty(IMAGE) String image;
   @ParcelProperty(TITLE) String title;
+  @ParcelProperty(IMAGE) String image;
+  @ParcelProperty(DETAILS) String details;
 
   public Genre() {}
 
   @ParcelConstructor
-  public Genre(String title, String image) {
+  public Genre(
+      @ParcelProperty(TITLE) String title,
+      @ParcelProperty(IMAGE) String image,
+      @ParcelProperty(DETAILS) String details) {
     this.title = title;
     this.image = image;
+    this.details = details;
   }
 
   public String getImage() {
@@ -39,6 +45,14 @@ public class Genre implements Renderable {
 
   public void setTitle(String title) {
     this.title = title;
+  }
+
+  public String getDetails() {
+    return details;
+  }
+
+  public void setDetails(String details) {
+    this.details = details;
   }
 
   @Override public int getRenderableId() {

@@ -1,5 +1,6 @@
 package com.amazing_mvp.ui.presenter;
 
+import android.graphics.Bitmap;
 import com.amazing_mvp.domain.model.Genre;
 import java.util.Collection;
 

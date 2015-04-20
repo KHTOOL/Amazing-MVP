@@ -1,5 +1,7 @@
 package com.amazing_mvp.ui.renderers.factory;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import com.amazing_mvp.R;
 import com.amazing_mvp.core.view.recyclerviewrenderers.interfaces.RendererFactory;
 import com.amazing_mvp.core.view.recyclerviewrenderers.renderer.Renderer;
