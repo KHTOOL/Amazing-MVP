@@ -3,10 +3,15 @@ package com.amazing_mvp.di;
 import android.app.Application;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
+import com.amazing_mvp.executor.InteractorExecutor;
+import com.amazing_mvp.executor.MainThread;
+import com.amazing_mvp.executor.MainThreadImpl;
+import com.amazing_mvp.executor.ThreadExecutor;
+import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
 
-public class ApplicationModule {
+@Module public class ApplicationModule {
 
   private final Application application;
 
@@ -24,6 +29,14 @@ public class ApplicationModule {
 
   @Provides @Singleton Resources provideResources() {
     return application.getResources();
+  }
+
+  @Provides @Singleton InteractorExecutor provideThreadExecutor(ThreadExecutor executor) {
+    return executor;
+  }
+
+  @Provides @Singleton MainThread providePostExecutionThread(MainThreadImpl mainThread) {
+    return mainThread;
   }
 
 }

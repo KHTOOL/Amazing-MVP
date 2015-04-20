@@ -15,8 +15,8 @@ import dagger.Provides;
     return presenter;
   }
 
-  @Provides @ActivityScope GetGenres provideGetGenres(GetGenresImpl camera) {
-    return camera;
+  @Provides @ActivityScope GetGenres provideGetGenres(GetGenresImpl getGenres) {
+    return getGenres;
   }
 
 }

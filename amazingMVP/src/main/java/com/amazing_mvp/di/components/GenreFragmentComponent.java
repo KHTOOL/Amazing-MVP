@@ -4,7 +4,7 @@ import com.amazing_mvp.di.ActivityModule;
 import com.amazing_mvp.di.GenreModule;
 import com.amazing_mvp.di.scopes.ActivityScope;
 import com.amazing_mvp.domain.interactors.GetGenres;
-import com.amazing_mvp.ui.BaseActivity;
+import com.amazing_mvp.ui.activity.BaseActivity;
 import dagger.Component;
 
 @ActivityScope @Component(dependencies = ApplicationComponent.class,

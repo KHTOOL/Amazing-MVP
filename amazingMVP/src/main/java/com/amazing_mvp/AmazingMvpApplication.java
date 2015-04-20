@@ -3,6 +3,7 @@ package com.amazing_mvp;
 import android.app.Application;
 import com.amazing_mvp.di.ApplicationModule;
 import com.amazing_mvp.di.components.ApplicationComponent;
+import com.amazing_mvp.di.components.DaggerApplicationComponent;
 
 public class AmazingMvpApplication extends Application {
 
