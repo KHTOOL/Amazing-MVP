@@ -1,5 +1,7 @@
 package com.amazing_mvp.domain.interactors;
 
+import android.content.res.Resources;
+import com.amazing_mvp.R;
 import com.amazing_mvp.domain.model.Genre;
 import com.amazing_mvp.executor.Interactor;
 import com.amazing_mvp.executor.InteractorExecutor;
@@ -13,6 +15,8 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
   private final InteractorExecutor interactorExecutor;
   private final MainThread mainThread;
   private Callback callback;
+
+  @Inject Resources resources;
 
   @Inject GetGenresImpl(InteractorExecutor interactorExecutor, MainThread mainThread) {
     this.interactorExecutor = interactorExecutor;
@@ -69,8 +73,12 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
 
   private ArrayList<Genre> createItems() {
     ArrayList<Genre> items = new ArrayList<>();
-    for (int i = 0; i < 100; i++) {
-      items.add(new Genre("teste", "tes"));
+
+    String[] title = resources.getStringArray(R.array.techno_array);
+    String[] urmImage = resources.getStringArray(R.array.techno_image_array);
+
+    for (int i = 0; i < title.length; i++) {
+      items.add(new Genre(title[i], urmImage[i]));
     }
     return items;
   }

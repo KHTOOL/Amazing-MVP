@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="200dp">
 
   <com.amazing_mvp.core.view.fresco.InstrumentedDraweeView
       android:id="@+id/genre_image"
@@ -15,6 +15,9 @@
       android:id="@+id/genre_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:padding="16dp"/>
+      android:background="@color/transparent_black"
+      android:padding="16dp"
+      android:layout_gravity="bottom"
+      android:textColor="@color/white"/>
 
 </FrameLayout>
