@@ -1,6 +1,11 @@
 <resources>
-  <string name="app_name">AmazingMVP</string>
 
-  <string name="hello_world">Hello world!</string>
+  <!-- Default -->
+  <string name="app_name">AmazingMVP</string>
   <string name="loading">Loading</string>
+  <string name="ok">OK</string>
+  <string name="close">Close</string>
+  <string name="empty">Nothing was found</string>
+  <string name="connection_error">Connection error</string>
+
 </resources>

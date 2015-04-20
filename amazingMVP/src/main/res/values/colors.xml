@@ -5,8 +5,8 @@
   <color name="white">#FFFFFF</color>
 
   <array name="progress_colors">
-    <item>@color/amaranth</item>
-    <item>@color/bright_cerulean</item>
+    <item>@color/black</item>
+    <item>@color/black</item>
   </array>
 
 </resources>
