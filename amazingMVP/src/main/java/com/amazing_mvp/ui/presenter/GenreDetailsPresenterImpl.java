@@ -26,24 +26,11 @@ public class GenreDetailsPresenterImpl implements GenreDetailsPresenter {
     loadCameras();
   }
 
-  @Override public void resume() {
+  @Override public void resume() {}
 
-  }
-
-  @Override public void pause() {
-
-  }
-
-  @Override public void restoreLoadedGenre(Genre genre) {
-    showGenre(genre);
-  }
-
-  @Override public Genre getCurrentGenreLoaded() {
-    return genre;
-  }
+  @Override public void pause() {}
 
   private void loadCameras() {
-    showLoading();
     getGenreDetails.execute(new GetGenreDetails.Callback() {
       @Override public void onGenreLoaded(Genre genre) {
         showGenre(genre);
@@ -53,9 +40,6 @@ public class GenreDetailsPresenterImpl implements GenreDetailsPresenter {
         showEmpty();
       }
 
-      @Override public void onErrorLoad() {
-        showError();
-      }
     });
   }
 
@@ -63,20 +47,11 @@ public class GenreDetailsPresenterImpl implements GenreDetailsPresenter {
     getGenreDetails.setParcelable(parcelable);
   }
 
-  private void showLoading() {
-    view.showLoading();
-  }
-
   private void showGenre(Genre genre) {
     if (genre != null) {
       this.genre = genre;
       view.renderGenre(genre);
-      view.showGenres();
     }
-  }
-
-  private void showError() {
-    view.showError();
   }
 
   private void showEmpty() {

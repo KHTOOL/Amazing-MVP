@@ -31,7 +31,7 @@ public class GetGenreDetailsImpl extends BaseImpl implements Interactor, GetGenr
     if(genre != null) {
       notifySuccess(genre);
     } else {
-      notifyError();
+      notifyEmpty();
     }
   }
 
@@ -51,14 +51,6 @@ public class GetGenreDetailsImpl extends BaseImpl implements Interactor, GetGenr
     mainThread.post(new Runnable() {
       @Override public void run() {
         callback.onGenresEmpty();
-      }
-    });
-  }
-
-  private void notifyError() {
-    mainThread.post(new Runnable() {
-      @Override public void run() {
-        callback.onErrorLoad();
       }
     });
   }

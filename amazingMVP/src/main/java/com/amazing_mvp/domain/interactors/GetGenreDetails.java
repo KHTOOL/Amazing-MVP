@@ -9,7 +9,6 @@ public interface GetGenreDetails {
   interface Callback {
     void onGenreLoaded(final Genre genre);
     void onGenresEmpty();
-    void onErrorLoad();
   }
 }
 

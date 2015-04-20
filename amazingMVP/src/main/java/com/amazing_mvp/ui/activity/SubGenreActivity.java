@@ -9,7 +9,6 @@ import com.amazing_mvp.core.view.fresco.InstrumentedDraweeView;
 import com.amazing_mvp.di.ActivityModule;
 import com.amazing_mvp.di.components.DaggerGenreDetailsActivityComponent;
 import com.amazing_mvp.di.components.GenreDetailsActivityComponent;
-import com.amazing_mvp.di.components.GenreFragmentComponent;
 import com.amazing_mvp.domain.model.Genre;
 import com.amazing_mvp.ui.presenter.GenreDetailsPresenter;
 import com.amazing_mvp.util.ViewUtil;
@@ -41,18 +40,6 @@ public class SubGenreActivity extends AbstractActivity implements GenreDetailsPr
     ViewUtil.bind(genreImage, genre.getImage());
     ViewUtil.verifyStringAndSet(genreTitle, genre.getTitle());
     ViewUtil.verifyStringAndSet(genreDetails, genre.getDetails());
-  }
-
-  @Override public void showGenres() {
-
-  }
-
-  @Override public void showLoading() {
-
-  }
-
-  @Override public void showError() {
-
   }
 
   @Override public void showEmpty() {
