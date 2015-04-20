@@ -17,6 +17,8 @@ public class Genre implements Renderable {
   @ParcelProperty(IMAGE) String image;
   @ParcelProperty(TITLE) String title;
 
+  public Genre() {}
+
   @ParcelConstructor
   public Genre(String title, String image) {
     this.title = title;
