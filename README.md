@@ -1,2 +1,69 @@
-# Amazing-MVP
-You need learn MVP!
+![Logo 1][1]
+
+[![Build Status](https://api.travis-ci.org/ppamorim/Dragger.svg?branch=master)](https://travis-ci.org/ppamorim/Dragger)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.dragger/dragger/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.dragger/dragger)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Dragger-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1673)
+[![Join the chat at https://gitter.im/ppamorim/Dragger](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ppamorim/Dragger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+Sample
+--------------------------------
+
+<a href="https://play.google.com/store/apps/details?id=com.github.dragger">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+</a>
+
+Contributors
+------------
+
+* [Pedro Paulo de Amorim][3]
+
+This was only possible because [Jorge Castillo][4] helped me and I am very grateful for that! Thank you. :)
+
+Developed By
+------------
+
+* Pedro Paulo de Amorim - <pp.amorim@hotmail.com>
+
+Libraries used on the project
+------------------------------------
+
+* [Recyclerview-Animators][10]
+* [Rey5137:Material][11]
+* [Smarttablayout][12]
+* [Fresco][13]
+* [Parceler][14]
+* [javax.annotation]
+* [Dagger 2][16]
+* [IcePick][17]
+* [Butterknife][18]
+
+License
+-------
+
+    Copyright 2015 Pedro Paulo de Amorim
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+[3]: https://github.com/ppamorim/
+[4]: https://github.com/JorgeCastilloPrz
+[5]: https://github.com/JakeWharton/butterknife
+[1]: ./art/amazing_mvp.png
+[10]: https://github.com/wasabeef/recyclerview-animators
+[11]: https://github.com/rey5137/material
+[12]: https://github.com/ogaclejapan/SmartTabLayout
+[13]: https://github.com/facebook/fresco
+[14]: https://github.com/johncarl81/parceler
+[16]: https://github.com/google/dagger
+[17]: https://github.com/frankiesardo/icepick
+[18]: https://github.com/JakeWharton/butterknife

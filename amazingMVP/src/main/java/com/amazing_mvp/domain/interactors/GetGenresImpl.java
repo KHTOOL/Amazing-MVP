@@ -31,7 +31,6 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
 
   @Override public void run() {
     try {
-      Thread.sleep(2000);
       ArrayList<Genre> cameras = createItems();
       if(cameras.size() > 0) {
         notifyConnectionSuccess(cameras);
