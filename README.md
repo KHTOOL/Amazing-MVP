@@ -8,7 +8,7 @@ Contributors
 
 * [Pedro Paulo de Amorim][3]
 
-This was only possible because [Jorge Castillo][4] helped me and I am very grateful for that! Thank you. :)
+This was only possible because [Jorge Castillo][4] and [Leonardo Rossetto][616] helped me and I am very grateful for that! Thank you. :)
 
 Developed By
 ------------
@@ -47,6 +47,7 @@ License
 [3]: https://github.com/ppamorim/
 [4]: https://github.com/JorgeCastilloPrz
 [5]: https://github.com/JakeWharton/butterknife
+[616]: https://github.com/leonardoxh
 [1]: ./art/amazing_mvp.png
 [10]: https://github.com/wasabeef/recyclerview-animators
 [11]: https://github.com/rey5137/material
