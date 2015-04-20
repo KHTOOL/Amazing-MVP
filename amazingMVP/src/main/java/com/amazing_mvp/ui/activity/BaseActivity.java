@@ -49,13 +49,14 @@ public class BaseActivity extends AbstractActivity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    ((AmazingMvpApplication) getApplication()).component().inject(this);
     configToolbar();
     configViewPager();
   }
 
   private void configToolbar() {
     setSupportActionBar(toolbar);
-    //toolbarTitle.setText(resources.getString(R.string.app_name));
+    toolbarTitle.setText(resources.getString(R.string.app_name));
   }
 
   private void configViewPager() {
