@@ -57,7 +57,7 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
   private ArrayList<Genre> createItems() {
     ArrayList<Genre> items = new ArrayList<>();
     for (int i = 0; i < 100; i++) {
-      items.add(new Genre());
+      items.add(new Genre("teste", "tes"));
     }
     return items;
   }
