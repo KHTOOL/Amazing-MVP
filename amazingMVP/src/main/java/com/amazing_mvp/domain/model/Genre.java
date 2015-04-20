@@ -9,6 +9,8 @@ import org.parceler.ParcelProperty;
 @Parcel(Parcel.Serialization.BEAN)
 public class Genre implements Renderable {
 
+  public static final String TAG = "Genre";
+
   public static final String IMAGE = "image";
   public static final String TITLE = "title";
 

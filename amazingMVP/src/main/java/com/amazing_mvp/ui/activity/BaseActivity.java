@@ -28,7 +28,7 @@ public class BaseActivity extends AbstractActivity {
   @InjectView(R.id.smart_tab_layout) SmartTabLayout smartTabLayout;
   @InjectView(R.id.view_pager) ViewPager viewPager;
 
-  @Override protected int getFragmentLayout() {
+  @Override protected int getContentViewId() {
     return R.layout.activity_base;
   }
 
@@ -40,13 +40,13 @@ public class BaseActivity extends AbstractActivity {
 
   private void configToolbar() {
     setSupportActionBar(toolbar);
-    toolbarTitle.setText(resources.getString(R.string.app_name));
+    //toolbarTitle.setText(resources.getString(R.string.app_name));
   }
 
   private void configViewPager() {
     FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
         getSupportFragmentManager(), FragmentPagerItems.with(this)
-        .add(R.string.house, GenreFragment.class)
+        //.add(R.string.house, GenreFragment.class)
         .add(R.string.techno, GenreFragment.class)
         .create());
     viewPager.setAdapter(adapter);

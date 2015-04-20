@@ -8,11 +8,11 @@ public abstract class AbstractActivity extends ActionBarActivity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(getFragmentLayout());
+    setContentView(getContentViewId());
     injectViews();
   }
 
-  protected abstract int getFragmentLayout();
+  protected abstract int getContentViewId();
 
   private void injectViews() {
     ButterKnife.inject(this);

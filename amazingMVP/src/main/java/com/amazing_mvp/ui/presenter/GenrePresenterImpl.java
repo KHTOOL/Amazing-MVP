@@ -2,6 +2,7 @@ package com.amazing_mvp.ui.presenter;
 
 import com.amazing_mvp.domain.interactors.GetGenres;
 import com.amazing_mvp.domain.model.Genre;
+import com.amazing_mvp.navigation.GenreNavigator;
 import java.util.Collection;
 import javax.inject.Inject;
 
@@ -9,9 +10,11 @@ public class GenrePresenterImpl implements GenrePresenter {
 
   private View view;
   private Collection<Genre> currentGenresLoaded;
+  private GenreNavigator genreNavigator;
   private GetGenres getGenres;
 
-  @Inject GenrePresenterImpl(GetGenres getGenres) {
+  @Inject GenrePresenterImpl(GenreNavigator genreNavigator, GetGenres getGenres) {
+    this.genreNavigator = genreNavigator;
     this.getGenres = getGenres;
   }
 
@@ -35,7 +38,7 @@ public class GenrePresenterImpl implements GenrePresenter {
   }
 
   @Override public void onGenreClick(Genre genre) {
-
+    genreNavigator.openGenreActivity(genre);
   }
 
   @Override public void restoreLoadedGenres(Collection<Genre> genres) {

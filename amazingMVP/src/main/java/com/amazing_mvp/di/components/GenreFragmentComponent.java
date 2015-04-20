@@ -11,7 +11,7 @@ import dagger.Component;
 
 @ActivityScope @Component(dependencies = ApplicationComponent.class,
     modules = { ActivityModule.class, GenreModule.class })
-public interface GenreFragmentComponent {
+public interface GenreFragmentComponent extends AbstractActivityComponent {
   void inject(BaseActivity baseActivity);
   void inject(GenreFragment genreFragment);
   GenrePresenter getPresenter();

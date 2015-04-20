@@ -3,10 +3,12 @@ package com.amazing_mvp.di;
 import android.app.Application;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
+
 import com.amazing_mvp.executor.InteractorExecutor;
 import com.amazing_mvp.executor.MainThread;
 import com.amazing_mvp.executor.MainThreadImpl;
 import com.amazing_mvp.executor.ThreadExecutor;
+
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;

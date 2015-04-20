@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+      
+        <activity android:name=".ui.activity.SubGenreActivity"
+            android:theme="@style/AppTheme.Base.Animation"/>
+      
     </application>
 
 </manifest>

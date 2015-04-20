@@ -28,7 +28,12 @@ public class ViewHolderGenre extends RenderViewHolder<Genre> {
     this.genreCallback = genreCallback;
   }
 
-  @Override public void onBindView(Genre genre) {
+  @Override public void onBindView(final Genre genre) {
+    itemView.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View view) {
+        genreCallback.onGenreClick(genre);
+      }
+    });
     genreName.setText(genre.getTitle());
     bind(genreImage, genre.getImage());
   }
