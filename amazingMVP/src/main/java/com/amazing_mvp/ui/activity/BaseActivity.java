@@ -22,18 +22,20 @@ public class BaseActivity extends AbstractActivity {
   @InjectView(R.id.smart_tab_layout) SmartTabLayout smartTabLayout;
   @InjectView(R.id.view_pager) ViewPager viewPager;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  @Override protected int getFragmentLayout() {
+    return R.layout.activity_base;
+  }
+
+  @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_base);
     configViewPager();
   }
 
   private void configViewPager() {
     FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
         getSupportFragmentManager(), FragmentPagerItems.with(this)
-        .add(R.string.cameras, GenreFragment.class)
-        .add(R.string.notifications, GenreFragment.class)
+        .add(R.string.app_name, GenreFragment.class)
+        .add(R.string.app_name, GenreFragment.class)
         .create());
     viewPager.setAdapter(adapter);
     smartTabLayout.setViewPager(viewPager);

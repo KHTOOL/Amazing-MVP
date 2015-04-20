@@ -3,12 +3,17 @@ package com.amazing_mvp.ui.presenter;
 import com.amazing_mvp.domain.interactors.GetGenres;
 import com.amazing_mvp.domain.model.Genre;
 import java.util.Collection;
+import javax.inject.Inject;
 
 public class GenrePresenterImpl implements GenrePresenter {
 
   private View view;
   private Collection<Genre> currentGenresLoaded;
   private GetGenres getGenres;
+
+  @Inject GenrePresenterImpl(GetGenres getGenres) {
+    this.getGenres = getGenres;
+  }
 
   @Override public void setView(View view) {
     if (view == null) {
