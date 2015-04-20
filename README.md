@@ -3,14 +3,6 @@
 [![Build Status](https://api.travis-ci.org/ppamorim/Amazing-MVP.svg?branch=master)](https://travis-ci.org/ppamorim/Amazing-MVP)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Dragger-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1673)
 
-Sample
---------------------------------
-
-<a href="https://play.google.com/store/apps/details?id=com.github.dragger">
-  <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
-</a>
-
 Contributors
 ------------
 
