@@ -8,4 +8,28 @@
   <string name="empty">Nothing was found</string>
   <string name="connection_error">Connection error</string>
 
+  <string name="house">House</string>
+  <string name="techno">Techno</string>
+
+  <string-array name="house">
+    <item>Acid House</item>
+    <item>Ambient House</item>
+    <item>Chicago House</item>
+    <item>Electro House</item>
+    <item>Deep House</item>
+    <item>Soulful House</item>
+    <item>Funky House</item>
+    <item>G House</item>
+    <item>Tech House</item>
+    <item>Tribal House</item>
+  </string-array>
+
+  <string-array name="techno">
+    <item>Acid Techno</item>
+    <item>Detroit Techno</item>
+    <item>Minimal Techno</item>
+    <item>Techno</item>
+    <item>ENTER</item>
+  </string-array>
+
 </resources>

@@ -7,6 +7,7 @@ public interface GetGenres {
   void execute(Callback callback);
   interface Callback {
     void onGenresLoaded(final Collection<Genre> genres);
+    void onGenresEmpty();
     void onErrorLoad();
   }
 }

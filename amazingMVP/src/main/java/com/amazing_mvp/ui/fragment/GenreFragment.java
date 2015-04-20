@@ -71,6 +71,13 @@ public class GenreFragment extends AbstractFragment implements GenrePresenter.Vi
     recyclerView.setAdapter(alphaAdapter);
   }
 
+  @Override public void showGenres() {
+    recyclerView.setVisibility(View.VISIBLE);
+    loadingLayout.setVisibility(View.GONE);
+    emptyLayout.setVisibility(View.GONE);
+    errorLayout.setVisibility(View.GONE);
+  }
+
   @Override public void showLoading() {
     loadingLayout.setVisibility(View.VISIBLE);
     recyclerView.setVisibility(View.GONE);

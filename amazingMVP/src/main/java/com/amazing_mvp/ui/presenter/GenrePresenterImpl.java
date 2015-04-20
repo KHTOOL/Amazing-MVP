@@ -50,11 +50,11 @@ public class GenrePresenterImpl implements GenrePresenter {
     showLoading();
     getGenres.execute(new GetGenres.Callback() {
       @Override public void onGenresLoaded(Collection<Genre> genres) {
-        if(genres.size() > 0) {
-          showGenres(genres);
-        } else {
-          showEmpty();
-        }
+        showGenres(genres);
+      }
+
+      @Override public void onGenresEmpty() {
+        showEmpty();
       }
 
       @Override public void onErrorLoad() {
@@ -73,6 +73,7 @@ public class GenrePresenterImpl implements GenrePresenter {
     if (view.isReady() && genres != null) {
       currentGenresLoaded = genres;
       view.renderGenres(genres);
+      view.showGenres();
     }
   }
 

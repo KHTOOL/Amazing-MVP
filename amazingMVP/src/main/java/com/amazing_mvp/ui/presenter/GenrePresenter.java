@@ -13,6 +13,7 @@ public interface GenrePresenter extends Presenter {
   interface View {
     boolean isReady();
     void renderGenres(Collection<Genre> genres);
+    void showGenres();
     void showLoading();
     void showError();
     void showEmpty();

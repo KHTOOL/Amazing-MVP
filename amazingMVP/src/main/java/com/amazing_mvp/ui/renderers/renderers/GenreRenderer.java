@@ -12,7 +12,7 @@ public class GenreRenderer extends Renderer {
 
   private Factory.GenreCallback genreCallback;
 
-  @Inject LayoutInflater layoutInflater;
+  LayoutInflater layoutInflater;
 
   public GenreRenderer(int id, Factory.GenreCallback genreCallback) {
     super(id);
@@ -20,6 +20,9 @@ public class GenreRenderer extends Renderer {
   }
 
   @Override public RenderViewHolder onCreateViewHolder(ViewGroup viewGroup, int id) {
+    if(layoutInflater == null) {
+      layoutInflater = LayoutInflater.from(viewGroup.getContext());
+    }
     return new ViewHolderGenre(layoutInflater.inflate(id, viewGroup, false), genreCallback);
   }
 

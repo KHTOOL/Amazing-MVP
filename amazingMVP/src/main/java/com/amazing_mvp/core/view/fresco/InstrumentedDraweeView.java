@@ -1,6 +1,5 @@
 package com.amazing_mvp.core.view.fresco;
 
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Animatable;

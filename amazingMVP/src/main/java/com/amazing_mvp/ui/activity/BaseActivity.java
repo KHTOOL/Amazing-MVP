@@ -34,8 +34,8 @@ public class BaseActivity extends AbstractActivity {
   private void configViewPager() {
     FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
         getSupportFragmentManager(), FragmentPagerItems.with(this)
-        .add(R.string.app_name, GenreFragment.class)
-        .add(R.string.app_name, GenreFragment.class)
+        .add(R.string.house, GenreFragment.class)
+        .add(R.string.techno, GenreFragment.class)
         .create());
     viewPager.setAdapter(adapter);
     smartTabLayout.setViewPager(viewPager);
