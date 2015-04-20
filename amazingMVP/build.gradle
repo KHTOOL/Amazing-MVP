@@ -39,10 +39,15 @@ android {
     exclude 'META-INF/services/javax.annotation.processing.Processor'
   }
 
+  lintOptions {
+    abortOnError false
+  }
+
 }
 
 buildscript {
   repositories {
+    mavenCentral()
     jcenter()
   }
   dependencies {
@@ -78,4 +83,12 @@ dependencies {
   compile 'com.google.dagger:dagger-compiler:2.0'
   compile 'frankiesardo:icepick:3.0.2'
   provided 'frankiesardo:icepick-processor:3.0.2'
+}
+
+task checkstyle(type: Checkstyle) {
+  configFile file('../config/checkstyle/checkstyle.xml')
+  source 'src/main/java'
+  include '**/*.java'
+  exclude '**/gen/**'
+  classpath = files()
 }
