@@ -6,7 +6,7 @@ import org.parceler.Parcel;
 import org.parceler.ParcelConstructor;
 import org.parceler.ParcelProperty;
 
-@Parcel(Parcel.Serialization.BEAN)
+@Parcel
 public class Genre implements Renderable {
 
   public static final String TAG = "Genre";
