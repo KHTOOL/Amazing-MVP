@@ -3,6 +3,12 @@
 [![Build Status](https://api.travis-ci.org/ppamorim/Amazing-MVP.svg?branch=master)](https://travis-ci.org/ppamorim/Amazing-MVP)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Dragger-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1673)
 
+How to use
+----------
+
+ For more information see [the wiki][2]
+
+
 Contributors
 ------------
 
@@ -44,6 +50,7 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
+[2]: https://github.com/ppamorim/Amazing-MVP/wiki
 [3]: https://github.com/ppamorim/
 [4]: https://github.com/JorgeCastilloPrz
 [5]: https://github.com/JakeWharton/butterknife
