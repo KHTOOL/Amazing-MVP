@@ -24,6 +24,7 @@ public interface GenreDetailsPresenter extends Presenter {
   void setParcelable(Parcelable parcelable);
 
   interface View {
+    boolean isCreated();
     void renderGenre(Genre genre);
     void showEmpty();
   }

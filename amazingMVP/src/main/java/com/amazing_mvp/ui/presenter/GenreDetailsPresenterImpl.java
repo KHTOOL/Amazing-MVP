@@ -63,14 +63,16 @@ public class GenreDetailsPresenterImpl implements GenreDetailsPresenter {
   }
 
   private void showGenre(Genre genre) {
-    if (genre != null) {
+    if (genre != null && view.isCreated()) {
       this.genre = genre;
       view.renderGenre(genre);
     }
   }
 
   private void showEmpty() {
-    view.showEmpty();
+    if(view.isCreated()) {
+      view.showEmpty();
+    }
   }
 
 }

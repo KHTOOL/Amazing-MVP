@@ -51,6 +51,10 @@ public class SubGenreActivity extends AbstractActivity implements GenreDetailsPr
     genreDetailsPresenter.initialize();
   }
 
+  @Override public boolean isCreated() {
+    return !isFinishing();
+  }
+
   @Override public void renderGenre(Genre genre) {
     ViewUtil.bind(genreImage, genre.getImage());
     ViewUtil.verifyStringAndSet(genreTitle, genre.getTitle());
