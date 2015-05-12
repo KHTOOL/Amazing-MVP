@@ -21,10 +21,10 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import com.amazing_mvp.R;
 import com.amazing_mvp.core.view.fresco.InstrumentedDraweeView;
-import com.amazing_mvp.core.view.recyclerviewrenderers.viewholder.RenderViewHolder;
 import com.amazing_mvp.domain.model.Genre;
 import com.amazing_mvp.ui.renderers.factory.Factory;
 import com.amazing_mvp.util.ViewUtil;
+import com.github.ppamorim.recyclerrenderers.viewholder.RenderViewHolder;
 
 public class ViewHolderGenre extends RenderViewHolder<Genre> {
 
@@ -48,7 +48,5 @@ public class ViewHolderGenre extends RenderViewHolder<Genre> {
     genreName.setText(genre.getTitle());
     ViewUtil.bind(genreImage, genre.getImage());
   }
-
-
 
 }

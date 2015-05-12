@@ -16,7 +16,7 @@
 package com.amazing_mvp.domain.model;
 
 import com.amazing_mvp.R;
-import com.amazing_mvp.core.view.recyclerviewrenderers.interfaces.Renderable;
+import com.github.ppamorim.recyclerrenderers.interfaces.Renderable;
 import org.parceler.Parcel;
 import org.parceler.ParcelConstructor;
 import org.parceler.ParcelProperty;
@@ -70,7 +70,7 @@ public class Genre implements Renderable {
     this.details = details;
   }
 
-  @Override public int getRenderableId() {
+  @Override public int getRenderableResourceId(int i) {
     return R.layout.adapter_genre;
   }
 

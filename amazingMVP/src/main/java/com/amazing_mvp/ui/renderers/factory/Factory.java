@@ -16,10 +16,10 @@
 package com.amazing_mvp.ui.renderers.factory;
 
 import com.amazing_mvp.R;
-import com.amazing_mvp.core.view.recyclerviewrenderers.interfaces.RendererFactory;
-import com.amazing_mvp.core.view.recyclerviewrenderers.renderer.Renderer;
 import com.amazing_mvp.domain.model.Genre;
 import com.amazing_mvp.ui.renderers.renderers.GenreRenderer;
+import com.github.ppamorim.recyclerrenderers.interfaces.RendererFactory;
+import com.github.ppamorim.recyclerrenderers.renderer.Renderer;
 
 public class Factory implements RendererFactory {
 
