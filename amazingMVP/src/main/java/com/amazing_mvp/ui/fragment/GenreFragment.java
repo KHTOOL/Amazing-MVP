@@ -18,6 +18,7 @@ package com.amazing_mvp.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
@@ -30,7 +31,9 @@ import com.amazing_mvp.ui.renderers.factory.Factory;
 import com.amazing_mvp.util.ViewUtil;
 import com.github.ppamorim.recyclerrenderers.adapter.RendererAdapter;
 import com.github.ppamorim.recyclerrenderers.builder.RendererBuilder;
+import com.github.ppamorim.recyclerrenderers.interfaces.Renderable;
 import icepick.Icepick;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.inject.Inject;
 import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
@@ -81,7 +84,11 @@ public class GenreFragment extends AbstractFragment implements GenrePresenter.Vi
   }
 
   @Override public void renderGenres(Collection<Genre> genres) {
-    genreAdapter = new RendererAdapter(genres, new RendererBuilder(new Factory(onGenreCallback)));
+    ArrayList<Renderable> renderable = new ArrayList<>();
+    renderable.addAll(genres);
+    genreAdapter = new RendererAdapter(renderable,
+        new RendererBuilder(new Factory(onGenreCallback)),
+        LayoutInflater.from(getActivity()));
     AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(genreAdapter);
     recyclerView.setAdapter(alphaAdapter);
   }

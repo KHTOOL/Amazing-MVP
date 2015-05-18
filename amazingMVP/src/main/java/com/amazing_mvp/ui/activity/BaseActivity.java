@@ -24,9 +24,12 @@ import butterknife.InjectView;
 import com.amazing_mvp.AmazingMvpApplication;
 import com.amazing_mvp.R;
 import com.amazing_mvp.di.ActivityModule;
+import com.amazing_mvp.di.SyncModule;
 import com.amazing_mvp.di.components.DaggerGenreFragmentComponent;
+import com.amazing_mvp.di.components.DaggerSyncComponent;
 import com.amazing_mvp.di.components.GenreFragmentComponent;
 import com.amazing_mvp.ui.fragment.GenreFragment;
+import com.amazing_mvp.ui.presenter.SyncPresenter;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -37,6 +40,8 @@ public class BaseActivity extends AbstractActivity {
   private GenreFragmentComponent genreFragmentComponent;
 
   @Inject Resources resources;
+
+  @Inject SyncPresenter syncPresenter; // I want to kill this guy
 
   @InjectView(R.id.toolbar) Toolbar toolbar;
   @InjectView(R.id.toolbar_title) TextView toolbarTitle;
@@ -50,6 +55,10 @@ public class BaseActivity extends AbstractActivity {
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ((AmazingMvpApplication) getApplication()).component().inject(this);
+    DaggerSyncComponent.builder()
+        .applicationComponent(((AmazingMvpApplication) getApplication()).component())
+        .syncModule(new SyncModule())
+        .build().inject(this);
     configToolbar();
     configViewPager();
   }

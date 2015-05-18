@@ -32,13 +32,13 @@ public class Factory implements RendererFactory {
   @Override public Renderer getRenderer(int id) {
     switch (id) {
       case R.layout.adapter_genre:
-        return new GenreRenderer(id, genreCallback);
+        return new GenreRenderer(genreCallback);
       default:
         return null;
     }
   }
 
-  public static interface GenreCallback {
+  public interface GenreCallback {
     void onGenreClick(Genre genre);
   }
 

@@ -26,18 +26,13 @@ public class GenreRenderer extends Renderer {
 
   private Factory.GenreCallback genreCallback;
 
-  LayoutInflater layoutInflater;
-
-  public GenreRenderer(int id, Factory.GenreCallback genreCallback) {
-    super(id);
+  public GenreRenderer(Factory.GenreCallback genreCallback) {
     this.genreCallback = genreCallback;
   }
 
-  @Override public RenderViewHolder onCreateViewHolder(ViewGroup viewGroup, int id) {
-    if(layoutInflater == null) {
-      layoutInflater = LayoutInflater.from(viewGroup.getContext());
-    }
+  @Override
+  public RenderViewHolder onCreateViewHolder(ViewGroup viewGroup, LayoutInflater layoutInflater,
+      int id) {
     return new ViewHolderGenre(layoutInflater.inflate(id, viewGroup, false), genreCallback);
   }
-
 }
