@@ -15,6 +15,7 @@
 */
 package com.amazing_mvp.ui.presenter;
 
+import android.content.res.Resources;
 import com.amazing_mvp.domain.interactors.GetGenres;
 import com.amazing_mvp.domain.model.Genre;
 import com.amazing_mvp.navigation.GenreNavigator;
@@ -66,6 +67,7 @@ public class GenrePresenterImpl implements GenrePresenter {
 
   private void loadCameras() {
     showLoading();
+    getGenres.getResources(view.getResources());
     getGenres.execute(new GetGenres.Callback() {
       @Override public void onGenresLoaded(Collection<Genre> genres) {
         showGenres(genres);

@@ -27,7 +27,7 @@ public class AmazingMvpApplication extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    initializeDependencyInjector();
+    initializeDependencyInjector().inject(this);
     Fresco.initialize(getApplicationContext());
   }
 
@@ -36,14 +36,17 @@ public class AmazingMvpApplication extends Application {
     Fresco.shutDown();
   }
 
-  public ApplicationComponent component() {
+  private ApplicationComponent initializeDependencyInjector() {
+    if(applicationComponent == null) {
+      applicationComponent = DaggerApplicationComponent.builder()
+          .applicationModule(new ApplicationModule(this))
+          .build();
+    }
     return applicationComponent;
   }
 
-  private void initializeDependencyInjector() {
-    applicationComponent = DaggerApplicationComponent.builder()
-        .applicationModule(new ApplicationModule(this))
-        .build();
+  public ApplicationComponent component() {
+    return applicationComponent;
   }
 
 }

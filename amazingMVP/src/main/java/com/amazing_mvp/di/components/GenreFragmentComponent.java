@@ -15,6 +15,7 @@
 */
 package com.amazing_mvp.di.components;
 
+import android.view.LayoutInflater;
 import com.amazing_mvp.di.ActivityModule;
 import com.amazing_mvp.di.GenreModule;
 import com.amazing_mvp.di.scopes.ActivityScope;
@@ -27,7 +28,6 @@ import dagger.Component;
 @ActivityScope @Component(dependencies = ApplicationComponent.class,
     modules = { ActivityModule.class, GenreModule.class })
 public interface GenreFragmentComponent extends AbstractActivityComponent {
-  void inject(BaseActivity baseActivity);
   void inject(GenreFragment genreFragment);
   GenrePresenter getPresenter();
   GetGenres getGenres();

@@ -15,7 +15,6 @@
 */
 package com.amazing_mvp.ui.activity;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +27,7 @@ import com.amazing_mvp.di.SyncModule;
 import com.amazing_mvp.di.components.DaggerGenreFragmentComponent;
 import com.amazing_mvp.di.components.DaggerSyncComponent;
 import com.amazing_mvp.di.components.GenreFragmentComponent;
+import com.amazing_mvp.di.components.SyncComponent;
 import com.amazing_mvp.ui.fragment.GenreFragment;
 import com.amazing_mvp.ui.presenter.SyncPresenter;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -37,11 +37,10 @@ import javax.inject.Inject;
 
 public class BaseActivity extends AbstractActivity {
 
+  private SyncComponent syncComponent;
   private GenreFragmentComponent genreFragmentComponent;
 
-  @Inject Resources resources;
-
-  @Inject SyncPresenter syncPresenter; // I want to kill this guy
+  @Inject SyncPresenter syncPresenter;
 
   @InjectView(R.id.toolbar) Toolbar toolbar;
   @InjectView(R.id.toolbar_title) TextView toolbarTitle;
@@ -54,18 +53,14 @@ public class BaseActivity extends AbstractActivity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ((AmazingMvpApplication) getApplication()).component().inject(this);
-    DaggerSyncComponent.builder()
-        .applicationComponent(((AmazingMvpApplication) getApplication()).component())
-        .syncModule(new SyncModule())
-        .build().inject(this);
+    syncComponent().inject(this);
     configToolbar();
     configViewPager();
   }
 
   private void configToolbar() {
     setSupportActionBar(toolbar);
-    toolbarTitle.setText(resources.getString(R.string.app_name));
+    toolbarTitle.setText(getResources().getString(R.string.app_name));
   }
 
   private void configViewPager() {
@@ -76,6 +71,16 @@ public class BaseActivity extends AbstractActivity {
         .create());
     viewPager.setAdapter(adapter);
     smartTabLayout.setViewPager(viewPager);
+  }
+
+  public SyncComponent syncComponent() {
+    if(syncComponent == null) {
+      syncComponent = DaggerSyncComponent.builder()
+          .applicationComponent(((AmazingMvpApplication) getApplication()).component())
+          .syncModule(new SyncModule())
+          .build();
+    }
+    return syncComponent;
   }
 
   public GenreFragmentComponent genreFragmentComponent() {

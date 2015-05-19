@@ -1,14 +1,10 @@
 package com.amazing_mvp.ui.presenter;
 
-import com.amazing_mvp.domain.interactors.GetSync;
 import javax.inject.Inject;
 
 public class SyncPresenterImpl implements SyncPresenter {
 
-  private GetSync getSync;
-
-  @Inject SyncPresenterImpl(GetSync getSync) {
-    this.getSync = getSync;
+  @Inject SyncPresenterImpl() {
   }
 
   @Override public void setView(View view) {

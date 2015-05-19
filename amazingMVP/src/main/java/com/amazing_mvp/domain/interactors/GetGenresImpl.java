@@ -30,8 +30,7 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
   private final InteractorExecutor interactorExecutor;
   private final MainThread mainThread;
   private Callback callback;
-
-  @Inject Resources resources;
+  private Resources resources;
 
   @Inject GetGenresImpl(InteractorExecutor interactorExecutor, MainThread mainThread) {
     this.interactorExecutor = interactorExecutor;
@@ -58,7 +57,10 @@ public class GetGenresImpl extends BaseImpl implements Interactor, GetGenres {
       }
       notifyConnectionError();
     }
+  }
 
+  @Override public void getResources(Resources resources) {
+    this.resources = resources;
   }
 
   private void notifyConnectionSuccess(final ArrayList<Genre> genres) {

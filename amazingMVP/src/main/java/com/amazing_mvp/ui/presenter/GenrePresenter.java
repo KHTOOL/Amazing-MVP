@@ -15,6 +15,7 @@
 */
 package com.amazing_mvp.ui.presenter;
 
+import android.content.res.Resources;
 import com.amazing_mvp.domain.model.Genre;
 import java.util.Collection;
 
@@ -26,6 +27,7 @@ public interface GenrePresenter extends Presenter {
   Collection<Genre> getCurrentGenresLoaded();
 
   interface View {
+    Resources getResources();
     boolean isReady();
     void renderGenres(Collection<Genre> genres);
     void showGenres();

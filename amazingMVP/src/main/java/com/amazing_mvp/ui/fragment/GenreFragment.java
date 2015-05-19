@@ -40,14 +40,17 @@ import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
 
 public class GenreFragment extends AbstractFragment implements GenrePresenter.View {
 
-  private RendererAdapter genreAdapter;
-
   @Inject GenrePresenter genrePresenter;
+  //@Inject LayoutInflater layoutInflater;
 
   @InjectView(R.id.layout_error) FrameLayout errorLayout;
   @InjectView(R.id.layout_empty) FrameLayout emptyLayout;
   @InjectView(R.id.layout_loading) RelativeLayout loadingLayout;
   @InjectView(R.id.recycler_view) RecyclerView recyclerView;
+
+  @Override protected int getFragmentLayout() {
+    return R.layout.fragment_genre;
+  }
 
   @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
@@ -86,11 +89,12 @@ public class GenreFragment extends AbstractFragment implements GenrePresenter.Vi
   @Override public void renderGenres(Collection<Genre> genres) {
     ArrayList<Renderable> renderable = new ArrayList<>();
     renderable.addAll(genres);
-    genreAdapter = new RendererAdapter(renderable,
-        new RendererBuilder(new Factory(onGenreCallback)),
-        LayoutInflater.from(getActivity()));
-    AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(genreAdapter);
-    recyclerView.setAdapter(alphaAdapter);
+    recyclerView.setAdapter(
+        new AlphaInAnimationAdapter(
+            new RendererAdapter(renderable,
+        new RendererBuilder(
+            new Factory(onGenreCallback)),
+        LayoutInflater.from(getActivity()))));
   }
 
   @Override public void showGenres() {
@@ -119,10 +123,6 @@ public class GenreFragment extends AbstractFragment implements GenrePresenter.Vi
     recyclerView.setVisibility(View.GONE);
     loadingLayout.setVisibility(View.GONE);
     emptyLayout.setVisibility(View.GONE);
-  }
-
-  @Override protected int getFragmentLayout() {
-    return R.layout.fragment_genre;
   }
 
   private Factory.GenreCallback onGenreCallback = new Factory.GenreCallback() {

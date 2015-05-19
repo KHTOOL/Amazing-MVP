@@ -44,10 +44,6 @@ import javax.inject.Singleton;
     return LayoutInflater.from(application);
   }
 
-  @Provides @Singleton Resources provideResources() {
-    return application.getResources();
-  }
-
   @Provides @Singleton InteractorExecutor provideThreadExecutor(ThreadExecutor executor) {
     return executor;
   }
