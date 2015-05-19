@@ -35,7 +35,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import javax.inject.Inject;
 
-public class BaseActivity extends AbstractActivity {
+public class BaseActivity extends AbstractActivity implements SyncPresenter.View {
 
   private SyncComponent syncComponent;
   private GenreFragmentComponent genreFragmentComponent;
@@ -54,7 +54,17 @@ public class BaseActivity extends AbstractActivity {
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     syncComponent().inject(this);
+    syncPresenter.setView(this);
+    syncPresenter.initialize();
     configToolbar();
+
+  }
+
+  @Override public boolean isReady() {
+    return !isFinishing();
+  }
+
+  @Override public void onEndSync() {
     configViewPager();
   }
 
