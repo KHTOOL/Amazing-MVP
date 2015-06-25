@@ -3,7 +3,7 @@
 [![Build Status](https://api.travis-ci.org/ppamorim/Amazing-MVP.svg?branch=master)](https://travis-ci.org/ppamorim/Amazing-MVP)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Dragger-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1673)
 
-How to use
+(OUTDATED) How to use
 ----------
 
  For more information see [the wiki][2]
